@@ -10,3 +10,5 @@ For example, [2, 4, 6, 2, 5] should return 13, since we pick 2, 6, and 5. [5, 1,
 Follow-up: Can you do this in O(N) time and constant space?
 """
 
+def solution():
+	pass
