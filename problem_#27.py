@@ -14,20 +14,23 @@ def solution(data):
 	stack = []
 	data = list(data)
 
-	opening = '({[)}]'
-	closing = ')}]({['
+	opening = '({['
+	closing = ')}]'
 
 	if len(data) < 2:
-		return false
+		return False
 	else:
-		stack.append(data[0])
-		for b in data[1:]:
-			if opening.index(b) == closing.index(stack[-1]):
-				stack.pop()
-			else:
+		for b in data:
+			if b in opening:
 				stack.append(b)
-	return not bool(stack)
+			else:
+				if len(stack) != 0 and closing.index(b) == opening.index(stack[-1]):
+					stack.pop()
+				else:
+					return False
+	print(stack)
+	return len(stack) == 0
 
 
-data = '([])[]({})'
+data = '}([])[]({})'
 print(solution(data))
