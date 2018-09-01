@@ -11,7 +11,22 @@ Given the string "([)]" or "((()", you should return false.
 """
 
 def solution(data):
-	
+	stack = []
+	data = list(data)
+
+	opening = '({[)}]'
+	closing = ')}]({['
+
+	if len(data) < 2:
+		return false
+	else:
+		stack.append(data[0])
+		for b in data[1:]:
+			if opening.index(b) == closing.index(stack[-1]):
+				stack.pop()
+			else:
+				stack.append(b)
+	return not bool(stack)
 
 
 data = '([])[]({})'
