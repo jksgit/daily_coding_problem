@@ -12,7 +12,6 @@ Given the string "([)]" or "((()", you should return false.
 
 def solution(data):
 	stack = []
-	data = list(data)
 
 	opening = '({['
 	closing = ')}]'
