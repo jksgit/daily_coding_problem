@@ -13,8 +13,8 @@ def solution(string, char_set):
     string_len = len(string)
     char_set_len = len(char_set)
 
-    for i in range(0, string_len):
-        print(string[i:3])
+    for i in range(string_len - char_set_len+1):
+        print(string[i:i+char_set_len])
 
 
 string = 'figehaeci'
